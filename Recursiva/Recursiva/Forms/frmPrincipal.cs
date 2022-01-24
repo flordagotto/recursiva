@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Linq;
 using Recursiva.Forms;
+using System.Text;
 
 namespace Recursiva
 {
@@ -31,7 +32,7 @@ namespace Recursiva
                 path = ofdCsv.FileName;
                 btnSelec.Text = path;
 
-                var reader = new StreamReader(File.OpenRead(path));
+                var reader = new StreamReader(File.OpenRead(path), Encoding.Default, true);
 
                 while (!reader.EndOfStream)
                 {
